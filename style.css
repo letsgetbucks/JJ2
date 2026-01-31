@@ -1,13 +1,52 @@
 
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: #fff;
+    --btn-bg: #4CAF50;
+    --btn-text: #fff;
+    --btn-shadow: rgba(0,0,0,0.2);
+    --machine-shadow: rgba(0,0,0,0.1);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --container-bg: #1e1e1e;
+    --btn-bg: #66bb6a;
+    --btn-text: #121212;
+    --btn-shadow: rgba(255,255,255,0.2);
+    --machine-shadow: rgba(255,255,255,0.1);
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--btn-shadow);
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    opacity: 0.8;
 }
 
 .container {
@@ -15,10 +54,11 @@ body {
 }
 
 .machine {
-    background-color: #fff;
+    background-color: var(--container-bg);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px var(--machine-shadow);
+    transition: background-color 0.3s;
 }
 
 .ball-container {
@@ -41,8 +81,8 @@ body {
 }
 
 #generate-btn {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -52,13 +92,13 @@ body {
     cursor: pointer;
     border-radius: 8px;
     border: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px var(--btn-shadow);
     transition: 0.3s;
 }
 
 #generate-btn:hover {
-    background-color: #45a049;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    opacity: 0.8;
+    box-shadow: 0 6px 12px var(--btn-shadow);
 }
 
 /* Ball Colors */
